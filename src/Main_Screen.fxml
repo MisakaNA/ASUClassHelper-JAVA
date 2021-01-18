@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="mainScene" nodeOrientation="LEFT_TO_RIGHT" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainViewController">
+   <children>
+      <Label layoutX="423.0" layoutY="14.0" prefHeight="58.0" prefWidth="355.0" text="ASU Class Helper" textAlignment="CENTER">
+         <font>
+            <Font name="Calibri" size="50.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Label>
+      <Label layoutX="86.0" layoutY="94.0" text="Semester:">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <ChoiceBox id="choiceBox" fx:id="semesterChoices" layoutX="236.0" layoutY="94.0" onMouseClicked="#setSemester" onMousePressed="#setSemester" onTouchPressed="#setSemester" prefHeight="30.0" prefWidth="136.0" />
+      <Label layoutX="87.0" layoutY="161.0" text="Class Name: ">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <TextField fx:id="className" layoutX="236.0" layoutY="161.0" onAction="#setClassName" onMousePressed="#setClassName" prefHeight="30.0" prefWidth="136.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Label layoutX="386.0" layoutY="165.0" text="(For Example:  CSE110)">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="openClasses" layoutX="87.0" layoutY="228.0" mnemonicParsing="false" onAction="#setOpenClasses" selected="true" text="Open Classes">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </CheckBox>
+      <CheckBox fx:id="allClasses" layoutX="251.0" layoutY="230.0" mnemonicParsing="false" onAction="#setAllClasses" text="All Classes">
+         <font>
+            <Font size="17.0" />
+         </font>
+      </CheckBox>
+      <Label layoutX="386.0" layoutY="235.0" text="(Select One)" />
+      <Button fx:id="search" layoutX="88.0" layoutY="286.0" mnemonicParsing="false" onAction="#searchClass" prefHeight="31.0" prefWidth="124.0" text="Search Class">
+         <font>
+            <Font size="15.0" />
+         </font></Button>
+      <Label fx:id="SEMESTER_ERROR" layoutX="88.0" layoutY="124.0" opacity="0.0" text="Please select the semester!" textFill="RED" />
+      <Label fx:id="CLASS_NAME_ERROR" layoutX="88.0" layoutY="180.0" opacity="0.0" text="Please enter the class name!" textFill="RED" />
+      <Label layoutX="66.0" layoutY="346.0" prefHeight="19.0" prefWidth="1044.0" text="      Class                               Title                               Number                     Instructor                      Days        Start Time      End Time          Location          Seats Open           Rating">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <ScrollPane layoutX="64.0" layoutY="373.0" prefHeight="366.0" prefWidth="1062.0">
+         <content>
+            <HBox prefHeight="363.0" prefWidth="1048.0">
+               <children>
+                  <Pane prefHeight="391.0" prefWidth="7.0" />
+                  <TextFlow fx:id="classFlow" prefHeight="386.0" prefWidth="51.0" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin></TextFlow>
+                  <TextFlow fx:id="titleFlow" prefHeight="386.0" prefWidth="237.0" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin></TextFlow>
+                  <TextFlow fx:id="numberFlow" prefHeight="386.0" prefWidth="71.0" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin></TextFlow>
+                  <TextFlow fx:id="instructorFlow" prefHeight="386.0" prefWidth="181.0" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin></TextFlow>
+                  <TextFlow fx:id="dayFlow" prefHeight="386.0" prefWidth="63.0" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin></TextFlow>
+                  <TextFlow fx:id="startTFlow" prefHeight="386.0" prefWidth="80.0" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin></TextFlow>
+                  <TextFlow fx:id="endTFlow" prefHeight="386.0" prefWidth="74.0" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin></TextFlow>
+                  <TextFlow fx:id="locationFlow" prefHeight="386.0" prefWidth="129.0" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin></TextFlow>
+                  <TextFlow fx:id="seatFlow" prefHeight="345.0" prefWidth="63.0" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin></TextFlow>
+                  <Pane prefHeight="391.0" prefWidth="32.0" />
+                  <TextFlow fx:id="ratingFlow" prefHeight="386.0" prefWidth="58.0" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin></TextFlow>
+               </children>
+            </HBox>
+         </content>
+      </ScrollPane>
+      <Label fx:id="numOfResults" layoutX="225.0" layoutY="294.0" prefHeight="21.0" prefWidth="269.0">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="ratingInfoLabel" layoutX="713.0" layoutY="94.0" text="Professor Rating Infomation:" visible="false">
+         <font>
+            <Font name="System Bold" size="17.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="loading" fitHeight="42.0" fitWidth="56.0" layoutX="230.0" layoutY="281.0" opacity="0.96" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@loadingAnimation.gif" />
+         </image>
+      </ImageView>
+      <ScrollPane fx:id="ratingInfoPane" layoutX="713.0" layoutY="130.0" prefHeight="183.0" prefWidth="411.0" visible="false">
+         <content>
+            <HBox prefHeight="181.0" prefWidth="409.0">
+               <children>
+                  <Pane prefHeight="181.0" prefWidth="5.0" />
+                  <TextFlow fx:id="ratingInfoFlow" prefHeight="181.0" prefWidth="408.0">
+                     <HBox.margin>
+                        <Insets top="5.0" />
+                     </HBox.margin></TextFlow>
+               </children>
+            </HBox>
+         </content>
+      </ScrollPane>
+      <Label layoutX="260.0" layoutY="739.0" text="* Rating information might be inaccurate if the professor has a abbreviation name or he/she had changed the name before. " />
+   </children>
+</AnchorPane>
