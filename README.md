@@ -1,5 +1,5 @@
 # ASU Class Helper
-An application that help students searching classes and get professor rating without opening web pages on web browser.
+An application that helps students searching classes and get professor rating without opening web pages on web browser.
 
 ![alt text](https://github.com/MisakaNA/ASUClassHelper-JAVA/blob/master/Main_Scene.png?raw=true)
 
