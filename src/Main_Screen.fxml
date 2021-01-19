@@ -8,7 +8,7 @@
 
 <AnchorPane fx:id="mainScene" nodeOrientation="LEFT_TO_RIGHT" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainViewController">
    <children>
-      <Label layoutX="423.0" layoutY="14.0" prefHeight="58.0" prefWidth="355.0" text="ASU Class Helper" textAlignment="CENTER">
+      <Label layoutX="423.0" layoutY="8.0" prefHeight="58.0" prefWidth="355.0" text="ASU Class Helper" textAlignment="CENTER">
          <font>
             <Font name="Calibri" size="50.0" />
          </font>
@@ -137,5 +137,10 @@
          </content>
       </ScrollPane>
       <Label layoutX="260.0" layoutY="739.0" text="* Rating information might be inaccurate if the professor has a abbreviation name or he/she had changed the name before. " />
+      <ImageView fitHeight="95.0" fitWidth="269.0" layoutX="-5.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@ASU.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
