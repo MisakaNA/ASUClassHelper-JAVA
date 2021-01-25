@@ -123,31 +123,20 @@ public class MainViewController {
 
     private void loadResult(List<ASUClass> classList) throws IOException {
         numOfResults.setText( "Total " + classList.size() + " results found for class " + className.getText() );
+
         for(ASUClass c : classList) {
 
-            Text classTxt = new Text(c.getName() + "\n");
-            classTxt.setFont(Font.font("Calibri", 14));
-            classTxt.setTextAlignment(TextAlignment.CENTER);
+            Text classTxt = setResultText(c.getName() + "\n");
             classFlow.getChildren().add(classTxt);
             classFlow.setLineSpacing(5.92);
 
-            Text titleTxt = new Text(c.getTitle() + "\n");
-            titleTxt.setFont(Font.font("Calibri", 14));
-            titleTxt.setTextAlignment(TextAlignment.RIGHT);
+            Text titleTxt = setResultText(c.getTitle() + "\n");
             titleFlow.getChildren().add(titleTxt);
             titleFlow.setLineSpacing(5.92);
 
-            Text numberTxt = new Text(c.getNumber() + "\n");
-            numberTxt.setFont(Font.font("Calibri", 14));
-            numberTxt.setTextAlignment(TextAlignment.CENTER);
+            Text numberTxt = setResultText(c.getNumber() + "\n");
             numberFlow.getChildren().add(numberTxt);
             numberFlow.setLineSpacing(5.92);
-
-            /*Text instructorTxt = new Text();
-            instructorTxt.setFont(Font.font("Calibri", 14));
-            instructorTxt.setTextAlignment(TextAlignment.CENTER);
-            instructorFlow.getChildren().add(instructorTxt);
-            instructorFlow.setLineSpacing(5.92);*/
 
             Hyperlink rmpLink = new Hyperlink(c.getInstructor());
             rmpLink.setOnAction(new EventHandler<ActionEvent>() {
@@ -178,33 +167,23 @@ public class MainViewController {
             instructorFlow.getChildren().add(rmpLink);
             instructorFlow.getChildren().add(new Text("\n"));
 
-            Text dayTxt = new Text("  " + c.getWeekdays() + "\n");
-            dayTxt.setFont(Font.font("Calibri", 14));
-            dayTxt.setTextAlignment(TextAlignment.CENTER);
+            Text dayTxt = setResultText("  " + c.getWeekdays() + "\n");
             dayFlow.getChildren().add(dayTxt);
             dayFlow.setLineSpacing(5.92);
 
-            Text startTTxt = new Text(c.getStartTime() + "\n");
-            startTTxt.setFont(Font.font("Calibri", 14));
-            startTTxt.setTextAlignment(TextAlignment.CENTER);
-            startTFlow.getChildren().add(startTTxt);
+            Text startTimeTxt = setResultText(c.getStartTime() + "\n");
+            startTFlow.getChildren().add(startTimeTxt);
             startTFlow.setLineSpacing(5.92);
 
-            Text endTTxt = new Text(c.getEndTime() + "\n");
-            endTTxt.setFont(Font.font("Calibri", 14));
-            endTTxt.setTextAlignment(TextAlignment.CENTER);
+            Text endTTxt = setResultText(c.getEndTime() + "\n");
             endTFlow.getChildren().add(endTTxt);
             endTFlow.setLineSpacing(5.92);
 
-            Text locationTxt = new Text(c.getLocation() + "\n");
-            locationTxt.setFont(Font.font("Calibri", 14));
-            locationTxt.setTextAlignment(TextAlignment.CENTER);
+            Text locationTxt = setResultText(c.getLocation() + "\n");
             locationFlow.getChildren().add(locationTxt);
             locationFlow.setLineSpacing(5.92);
 
-            Text seatTxt = new Text(c.getSeatsOpen() + "\n");
-            seatTxt.setFont(Font.font("Calibri", 14));
-            seatTxt.setTextAlignment(TextAlignment.CENTER);
+            Text seatTxt = setResultText(c.getSeatsOpen() + "\n");
             seatFlow.getChildren().add(seatTxt);
             seatFlow.setLineSpacing(5.92);
 
@@ -223,7 +202,7 @@ public class MainViewController {
                 ratingInfoHolder.put(fullName, info);
             }
 
-            Text ratingTxt = new Text((info == null) ? "N/A\n" : info.getScore() + "\n");
+            Text ratingTxt = setResultText((info == null) ? "N/A\n" : info.getScore() + "\n");
             ratingTxt.setFont(Font.font("Calibri", 14));
             ratingTxt.setTextAlignment(TextAlignment.CENTER);
             ratingFlow.getChildren().add(ratingTxt);
@@ -278,6 +257,14 @@ public class MainViewController {
 
         ratingInfoFlow.getChildren().addAll(t, name, t1, department, t2, score, t3, takeAgain, t4, levelDifficulty, t5, topTags, t6, topRating);
         ratingInfoFlow.setLineSpacing(8);
+    }
+
+    private Text setResultText(String text) {
+        Text txt = new Text(text);
+        txt.setFont(Font.font("Calibri", 14));
+        txt.setTextAlignment(TextAlignment.CENTER);
+
+        return txt;
     }
 
     private void resetTextFlows() {
