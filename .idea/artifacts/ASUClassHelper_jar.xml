@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="ASUClassHelper:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/ASUClassHelper_jar</output-path>
+    <root id="archive" name="ASUClassHelper.jar">
+      <element id="module-output" name="ASUClassHelper" />
+      <element id="extracted-dir" path="$APPLICATION_HOME_DIR$/lib/jsoup-1.11.3.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
