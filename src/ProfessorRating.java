@@ -1,3 +1,4 @@
+import javafx.scene.control.Alert;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -34,7 +35,7 @@ class ProfessorRating {
             System.out.println("--Debug-- Get professor id");
 
         } catch (Exception e) {
-            System.out.println("--Debug-- No teacher ID found");
+            System.out.println("--Error-- No teacher ID found");
             return teacherID;
         }
         return teacherID;
@@ -83,6 +84,7 @@ class ProfessorRating {
 
             System.out.println("--Debug-- Professor information is loaded successfully");
         } catch (Exception e) {
+            //Alert alert = new
             System.out.println("Uh-oh...something bad happened when finding rating information...");
         }
         return info;

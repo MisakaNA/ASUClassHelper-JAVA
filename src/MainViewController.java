@@ -123,6 +123,7 @@ public class MainViewController {
 
     private void loadResult(List<ASUClass> classList) throws IOException {
         numOfResults.setText( "Total " + classList.size() + " results found for class " + className.getText() );
+        int classTracker = 0;
 
         for(ASUClass c : classList) {
 
@@ -139,30 +140,29 @@ public class MainViewController {
             numberFlow.setLineSpacing(5.92);
 
             Hyperlink rmpLink = new Hyperlink(c.getInstructor());
-            rmpLink.setOnAction(new EventHandler<ActionEvent>() {
-                @Override
-                public void handle(ActionEvent event) {
-                    //RatingInfo info;
-                    ratingInfoFlow.getChildren().clear();
-                    for(ASUClass c : classList) {
-                        if(c.getInstructor().equals(rmpLink.getText())) {
-                            if(ratingInfoHolder.containsKey(c.getFullname())) {
-                                setUpRatingInfo(ratingInfoHolder.get(c.getFullname()));
-                            } else {
-                                Text text = new Text("\n\n\n\n\t\tNo Rating Information For This Professor");
-                                text.setFill(Color.RED);
-                                text.setFont(Font.font("Calibri", FontWeight.EXTRA_BOLD, 16));
-                                ratingInfoFlow.getChildren().add(text);
-                            }
-
-                            ratingInfoFlow.setVisible(true);
-                            ratingInfoLabel.setVisible(true);
-                            ratingInfoPane.setVisible(true);
-                            break;
+            rmpLink.setOnAction(event -> {
+                //RatingInfo info;
+                ratingInfoFlow.getChildren().clear();
+                for(ASUClass c1 : classList) {
+                    if(c1.getInstructor().equals(rmpLink.getText())) {
+                        if(ratingInfoHolder.containsKey(c1.getFullname())) {
+                            setUpRatingInfo(ratingInfoHolder.get(c1.getFullname()));
+                        } else {
+                            Text text = new Text("\n\n\n\n\t\tNo Rating Information For This Professor");
+                            text.setFill(Color.RED);
+                            text.setFont(Font.font("Calibri", FontWeight.EXTRA_BOLD, 16));
+                            ratingInfoFlow.getChildren().add(text);
                         }
-                    }
 
+                        ratingInfoFlow.setVisible(true);
+                        ratingInfoLabel.setVisible(true);
+                        ratingInfoPane.setVisible(true);
+
+                        System.out.println("--Debug-- Showing rating info");
+                        break;
+                    }
                 }
+
             });
             instructorFlow.getChildren().add(rmpLink);
             instructorFlow.getChildren().add(new Text("\n"));
@@ -208,7 +208,7 @@ public class MainViewController {
             ratingFlow.getChildren().add(ratingTxt);
             ratingFlow.setLineSpacing(5.92);
 
-            System.out.println("--Debug-- Data loaded to textflow");
+            System.out.printf("--Debug-- Class %d Data loaded to textflow\n", classTracker++);
         }
     }
 
@@ -257,6 +257,8 @@ public class MainViewController {
 
         ratingInfoFlow.getChildren().addAll(t, name, t1, department, t2, score, t3, takeAgain, t4, levelDifficulty, t5, topTags, t6, topRating);
         ratingInfoFlow.setLineSpacing(8);
+
+        System.out.println("--Debug-- Rating Data loaded to textflow");
     }
 
     private Text setResultText(String text) {

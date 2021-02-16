@@ -2,6 +2,7 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.*;
 import org.jsoup.select.Elements;
 import java.io.IOException;
+import java.text.AttributedString;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -78,7 +79,7 @@ class ASUClassFinder {
 
         String fullname = classNode.child(3).child(0).select("a[title]").attr("title");
         fullname = (fullname.equals("")) ? "" : fullname.split("\\|")[1];
-        classObj.setFullname(fullname);
+        classObj.setFullname(checkFullName(fullname));
 
         classObj.setWeekdays(classNode.child(4).text());
         classObj.setStartTime(classNode.child(5).text());
@@ -91,6 +92,17 @@ class ASUClassFinder {
         classObj.setSeatsOpen(classNode.child(10).text().replace(" of ", "/"));
 
         return classObj;
+    }
+
+    private String checkFullName(String fullName) {
+        switch (fullName) {
+            case "Farideh Tadayon-Navabi":
+                return "Faye Tadayon-Navabi";
+            case "Ihan Hsiao":
+                return "Sharon Hsiao";
+            default:
+                return fullName;
+        }
     }
 
 }

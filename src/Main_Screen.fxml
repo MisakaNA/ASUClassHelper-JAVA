@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="mainScene" nodeOrientation="LEFT_TO_RIGHT" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainViewController">
+<AnchorPane fx:id="mainScene" nodeOrientation="LEFT_TO_RIGHT" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainViewController">
    <children>
       <Label layoutX="423.0" layoutY="8.0" prefHeight="58.0" prefWidth="355.0" text="ASU Class Helper" textAlignment="CENTER">
          <font>
@@ -52,7 +52,7 @@
             <Font size="15.0" />
          </font></Button>
       <Label fx:id="SEMESTER_ERROR" layoutX="88.0" layoutY="124.0" opacity="0.0" text="Please select the semester!" textFill="RED" />
-      <Label fx:id="CLASS_NAME_ERROR" layoutX="88.0" layoutY="180.0" opacity="0.0" text="Please enter the class name!" textFill="RED" />
+      <Label fx:id="CLASS_NAME_ERROR" layoutX="85.0" layoutY="180.0" opacity="0.0" text="Please enter the class name!" textFill="RED" />
       <Label layoutX="66.0" layoutY="346.0" prefHeight="19.0" prefWidth="1044.0" text="      Class                               Title                               Number                     Instructor                      Days        Start Time      End Time          Location          Seats Open           Rating">
          <font>
             <Font name="System Bold" size="13.0" />
@@ -118,11 +118,6 @@
             <Font name="System Bold" size="17.0" />
          </font>
       </Label>
-      <ImageView fx:id="loading" fitHeight="42.0" fitWidth="56.0" layoutX="230.0" layoutY="281.0" opacity="0.96" pickOnBounds="true" preserveRatio="true" visible="false">
-         <image>
-            <Image url="@loadingAnimation.gif" />
-         </image>
-      </ImageView>
       <ScrollPane fx:id="ratingInfoPane" layoutX="713.0" layoutY="130.0" prefHeight="183.0" prefWidth="411.0" visible="false">
          <content>
             <HBox prefHeight="181.0" prefWidth="409.0">
