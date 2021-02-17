@@ -2,7 +2,6 @@ import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.*;
 
@@ -15,49 +14,47 @@ public class MainViewController {
     private final HashMap<String, RatingInfo> ratingInfoHolder = new HashMap<>();
 
     @FXML
-    private ChoiceBox<String> semesterChoices = new ChoiceBox<>();
+    private final ChoiceBox<String> semesterChoices = new ChoiceBox<>();
     @FXML
-    private TextField className = new TextField("e.g CSE110");
+    private final TextField className = new TextField("e.g CSE110");
     @FXML
-    private CheckBox openClasses = new CheckBox();
+    private final CheckBox openClasses = new CheckBox();
     @FXML
-    private CheckBox allClasses = new CheckBox();
+    private final CheckBox allClasses = new CheckBox();
     @FXML
-    private Button search = new Button();
+    private final Label SEMESTER_ERROR = new Label();
     @FXML
-    private Label SEMESTER_ERROR = new Label();
-    @FXML
-    private Label CLASS_NAME_ERROR = new Label();
+    private final Label CLASS_NAME_ERROR = new Label();
     @FXML
     private TextFlow classFlow;
     @FXML
-    private TextFlow titleFlow = new TextFlow();
+    private final TextFlow titleFlow = new TextFlow();
     @FXML
-    private TextFlow numberFlow = new TextFlow();
+    private final TextFlow numberFlow = new TextFlow();
     @FXML
-    private TextFlow instructorFlow = new TextFlow();
+    private final TextFlow instructorFlow = new TextFlow();
     @FXML
-    private TextFlow dayFlow = new TextFlow();
+    private final TextFlow dayFlow = new TextFlow();
     @FXML
-    private TextFlow startTFlow = new TextFlow();
+    private final TextFlow startTFlow = new TextFlow();
     @FXML
-    private TextFlow endTFlow = new TextFlow();
+    private final TextFlow endTFlow = new TextFlow();
     @FXML
-    private TextFlow locationFlow = new TextFlow();
+    private final TextFlow locationFlow = new TextFlow();
     @FXML
-    private TextFlow seatFlow = new TextFlow();
+    private final TextFlow seatFlow = new TextFlow();
     @FXML
-    private TextFlow ratingFlow = new TextFlow();
+    private final TextFlow ratingFlow = new TextFlow();
     @FXML
-    private Label numOfResults = new Label();
+    private final Label numOfResults = new Label();
     @FXML
-    private ImageView loading = new ImageView();
+    private final ImageView loading = new ImageView();
     @FXML
-    private Label ratingInfoLabel = new Label();
+    private final Label ratingInfoLabel = new Label();
     @FXML
-    private ScrollPane ratingInfoPane = new ScrollPane();
+    private final ScrollPane ratingInfoPane = new ScrollPane();
     @FXML
-    private TextFlow ratingInfoFlow = new TextFlow();
+    private final TextFlow ratingInfoFlow = new TextFlow();
 
     @FXML
     public void setSemester() {
@@ -91,6 +88,7 @@ public class MainViewController {
             allClasses.setSelected(true);
         }
     }
+
     @FXML
     public void searchClass() throws IOException {
         loading.setVisible(true);
