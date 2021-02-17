@@ -2,6 +2,7 @@ import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.scene.text.*;
 
@@ -14,47 +15,49 @@ public class MainViewController {
     private final HashMap<String, RatingInfo> ratingInfoHolder = new HashMap<>();
 
     @FXML
-    private final ChoiceBox<String> semesterChoices = new ChoiceBox<>();
+    private ChoiceBox<String> semesterChoices = new ChoiceBox<>();
     @FXML
-    private final TextField className = new TextField("e.g CSE110");
+    private TextField className = new TextField("e.g CSE110");
     @FXML
-    private final CheckBox openClasses = new CheckBox();
+    private CheckBox openClasses = new CheckBox();
     @FXML
-    private final CheckBox allClasses = new CheckBox();
+    private CheckBox allClasses = new CheckBox();
     @FXML
-    private final Label SEMESTER_ERROR = new Label();
+    private Button search = new Button();
     @FXML
-    private final Label CLASS_NAME_ERROR = new Label();
+    private Label SEMESTER_ERROR = new Label();
+    @FXML
+    private Label CLASS_NAME_ERROR = new Label();
     @FXML
     private TextFlow classFlow;
     @FXML
-    private final TextFlow titleFlow = new TextFlow();
+    private TextFlow titleFlow = new TextFlow();
     @FXML
-    private final TextFlow numberFlow = new TextFlow();
+    private TextFlow numberFlow = new TextFlow();
     @FXML
-    private final TextFlow instructorFlow = new TextFlow();
+    private TextFlow instructorFlow = new TextFlow();
     @FXML
-    private final TextFlow dayFlow = new TextFlow();
+    private TextFlow dayFlow = new TextFlow();
     @FXML
-    private final TextFlow startTFlow = new TextFlow();
+    private TextFlow startTFlow = new TextFlow();
     @FXML
-    private final TextFlow endTFlow = new TextFlow();
+    private TextFlow endTFlow = new TextFlow();
     @FXML
-    private final TextFlow locationFlow = new TextFlow();
+    private TextFlow locationFlow = new TextFlow();
     @FXML
-    private final TextFlow seatFlow = new TextFlow();
+    private TextFlow seatFlow = new TextFlow();
     @FXML
-    private final TextFlow ratingFlow = new TextFlow();
+    private TextFlow ratingFlow = new TextFlow();
     @FXML
-    private final Label numOfResults = new Label();
+    private Label numOfResults = new Label();
     @FXML
-    private final ImageView loading = new ImageView();
+    private ImageView loading = new ImageView();
     @FXML
-    private final Label ratingInfoLabel = new Label();
+    private Label ratingInfoLabel = new Label();
     @FXML
-    private final ScrollPane ratingInfoPane = new ScrollPane();
+    private ScrollPane ratingInfoPane = new ScrollPane();
     @FXML
-    private final TextFlow ratingInfoFlow = new TextFlow();
+    private TextFlow ratingInfoFlow = new TextFlow();
 
     @FXML
     public void setSemester() {
