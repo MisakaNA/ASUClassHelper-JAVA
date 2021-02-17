@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="mainScene" nodeOrientation="LEFT_TO_RIGHT" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainViewController">
+<AnchorPane id="mainScene" nodeOrientation="LEFT_TO_RIGHT" prefHeight="800.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="MainViewController">
    <children>
       <Label layoutX="423.0" layoutY="8.0" prefHeight="58.0" prefWidth="355.0" text="ASU Class Helper" textAlignment="CENTER">
          <font>
